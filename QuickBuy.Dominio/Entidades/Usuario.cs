@@ -13,5 +13,10 @@ namespace QuickBuy.Dominio.Entidades
         /// um usuario pode ter nenhum ou muitos pedidos
         /// </summary>
         public ICollection<Pedido>Pedidos { get; set; }
+
+        public override void Validade()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

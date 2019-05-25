@@ -27,9 +27,11 @@ namespace QuickBuy.Dominio.Entidades
 
         public override void Validade()
         {
-           Limpar
+            LimparMenssagensValidacao();
             if (!ItemsPedido.Any())
-                MensagemValidacao.Add("Crítica - Pedido não pode ficar sem item de pedido");
+                AdicionaCritica("Crítica - Pedido não pode ficar sem item de pedido");
+            if (string.IsNullOrEmpty(CEP))
+                AdicionaCritica("Crítica - CEP deve estar Prenchida");
         }
     }
 }

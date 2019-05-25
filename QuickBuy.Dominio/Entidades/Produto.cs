@@ -10,5 +10,10 @@ namespace QuickBuy.Dominio.Entidades
         public string Nome { get; set; }
         public string Descrica { get; set; }
         public Decimal Preco { get; set; }
+
+        public override void Validade()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
