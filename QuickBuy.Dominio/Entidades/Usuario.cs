@@ -12,11 +12,16 @@ namespace QuickBuy.Dominio.Entidades
         /// <summary>
         /// um usuario pode ter nenhum ou muitos pedidos
         /// </summary>
-        public ICollection<Pedido>Pedidos { get; set; }
+        public virtual ICollection<Pedido>Pedidos { get; set; }
 
         public override void Validade()
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrWhiteSpace(Email))
+                AdicionaCritica("Email não foi informado");
+
+            if (string.IsNullOrWhiteSpace(Senha))
+                AdicionaCritica("Senha não foi informado");
+
         }
     }
 }
