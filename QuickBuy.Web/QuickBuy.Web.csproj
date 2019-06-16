@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Confg.json">
+    <Content Update="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
