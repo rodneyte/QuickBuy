@@ -9,7 +9,7 @@ namespace QuickBuy.Dominio.Entidades
     {
         private List<string> _messagemValidacao { get; set; }
 
-        private List<string> MensagemValidacao
+       private List<string> MensagemValidacao
         {
             get { return _messagemValidacao ?? (_messagemValidacao = new List<string>()); }
         }
