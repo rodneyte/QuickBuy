@@ -28,9 +28,21 @@ namespace QuickBuy.Repositorio.Repositorios
             throw new NotImplementedException();
         }
 
+       
+        public void Atualizar(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remover(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Dispose()
         {
             throw new NotImplementedException();
         }
+
     }
 }
