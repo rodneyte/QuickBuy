@@ -22,10 +22,8 @@ namespace QuickBuy.Repositorio.Config
             builder.Property(p => p.DataPedido)
                 .IsRequired();
 
-
-            builder.Property(p => p.DataPrevistaEntrega);
-
-
+            builder.Property(p => p.DataPrevisaoEntrega);
+                                   
             builder.Property(p => p.DataPedido)
                 .IsRequired();
 

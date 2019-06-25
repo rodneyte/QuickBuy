@@ -10,6 +10,7 @@ namespace QuickBuy.Repositorio.Config
         {
             builder.HasKey(u => u.Id);
 
+            //Buider utiliza o padrão Fluent
             builder
                 .Property(u => u.Email)
                 .IsRequired()
@@ -20,7 +21,13 @@ namespace QuickBuy.Repositorio.Config
                 .IsRequired()
                 .HasMaxLength(400);
 
-            builder.Property(u => u.Nome)
+            builder
+                .Property(u => u.Nome)
+                .IsRequired()
+                .HasMaxLength(50);
+
+            builder
+                .Property(u => u.SobreNome)
                 .IsRequired()
                 .HasMaxLength(50);
 

@@ -9,28 +9,16 @@ namespace QuickBuy.Repositorio.Config
         public void Configure(EntityTypeBuilder<FormaPagamento> builder)
         {
             builder.HasKey(f => f.Id);
-
             builder
                 .Property(f => f.Nome)
                 .IsRequired()
                 .HasMaxLength(50);
-
             builder
-                 .Property(f => f.Descricao)
-                 .IsRequired()
-                 .HasMaxLength(100);
+                .Property(f => f.Descricao)
+                .IsRequired()
+                .HasMaxLength(100);
 
-            builder
-                 .Property(f => f.EhBolito);
 
-            builder
-                 .Property(f => f.EhCartaoCredito);
-
-            builder
-                 .Property(f => f.EhCartaoDebito);
-
-            builder
-                 .Property(f => f.EhNaoDefinido);
         }
     }
 }

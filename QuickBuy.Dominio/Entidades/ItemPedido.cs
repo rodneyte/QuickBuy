@@ -13,10 +13,10 @@ namespace QuickBuy.Dominio.Entidades
         public override void Validade()
         {
             if (ProdutoId == 0)
-                AdicionaCritica("Não foi indentificado qual a refêrencia do produto.");
+                AdicionarCritica("Não foi indentificado qual a refêrencia do produto.");
 
             if (ProdutoId == 0)
-                AdicionaCritica("Quantidade não foi informado");
+                AdicionarCritica("Quantidade não foi informado");
 
         }
     }

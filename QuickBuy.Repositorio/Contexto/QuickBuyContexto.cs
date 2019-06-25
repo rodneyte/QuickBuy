@@ -13,7 +13,7 @@ namespace QuickBuy.Repositorio.Contexto
         public DbSet<Produto>Produtos { get; set; }
         public DbSet<Pedido>Pedidos { get; set; }
         public DbSet<ItemPedido>ItemPedidos { get; set; }
-        public DbSet<FormaPagamento> MyProperty { get; set; }
+        public DbSet<FormaPagamento> FormaPagamento { get; set; }
 
         public QuickBuyContexto(DbContextOptions options) : base(options)
         {

@@ -5,37 +5,40 @@ using System.Linq;
 
 namespace QuickBuy.Dominio.Entidades
 {
-    public class Pedido:Entidade
+    public class Pedido : Entidade
     {
         public int Id { get; set; }
         public DateTime DataPedido { get; set; }
         public int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
-        public DateTime DataPrevistaEntrega { get; set; }
+        public DateTime DataPrevisaoEntrega { get; set; }
         public string CEP { get; set; }
         public string Estado { get; set; }
         public string Cidade { get; set; }
         public string EnderecoCompleto { get; set; }
         public int NumeroEndereco { get; set; }
         public int FormaPagamentoId { get; set; }
-        public virtual FormaPagamento formaPagamento { get; set; }
+        public virtual FormaPagamento FormaPagamento { get; set; }
+
         /// <summary>
-        /// Pedido deve ter um pedido 
-        /// ou muitos pedidos
+        /// Pedido deve ter pelo menos um item de pedido
+        /// ou muitos itens de pedidos
         /// </summary>
-        public virtual ICollection<ItemPedido> ItemsPedido { get; set; }
+        public virtual ICollection<ItemPedido> ItensPedido { get; set; }
 
         public override void Validade()
         {
-            LimparMenssagensValidacao();
-            if (!ItemsPedido.Any())
-                AdicionaCritica("Crítica - Pedido não pode ficar sem item de pedido");
+            LimparMensagensValidacao();
+
+            if (!ItensPedido.Any())
+                AdicionarCritica("Crítica - Pedido não pode ficar sem item de pedido");
 
             if (string.IsNullOrEmpty(CEP))
-                AdicionaCritica("Crítica - CEP deve estar Prenchida");
+                AdicionarCritica("Crítica - CEP deve estar preenchido");
 
             if (FormaPagamentoId == 0)
-                AdicionaCritica("Crítica - Não foi informado forma de pagamento");
+                AdicionarCritica("Crítica - Não foi informado a forma de pagamento");
+
         }
     }
 }
