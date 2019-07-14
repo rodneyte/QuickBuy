@@ -26,6 +26,7 @@ namespace QuickBuy.Repositorio.Contexto
             modelBuilder.ApplyConfiguration(new PedidoConfiruration());
             modelBuilder.ApplyConfiguration(new ItemPedidoConfiruration());
             modelBuilder.ApplyConfiguration(new FormaPagamentoConfiguration());
+
             base.OnModelCreating(modelBuilder);
         }
     }
