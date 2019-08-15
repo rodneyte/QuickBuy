@@ -13,7 +13,7 @@ namespace QuickBuy.Repositorio.Repositorios
 
         public BaseRepositorio(QuickBuyContexto quickBuyContexto)
         {
-            quickBuyContexto = QuickBuyContexto;
+            QuickBuyContexto = quickBuyContexto;
         }
         public void Adicionar(TEntity entity)
         {
