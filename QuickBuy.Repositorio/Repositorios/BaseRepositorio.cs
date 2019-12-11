@@ -24,6 +24,7 @@ namespace QuickBuy.Repositorio.Repositorios
         public TEntity ObterPorId(int id)
         {
             return QuickBuyContexto.Set<TEntity>().Find(id);
+           
         }
 
         public IEnumerable<TEntity> ObterTodos()
@@ -36,12 +37,14 @@ namespace QuickBuy.Repositorio.Repositorios
         {
             QuickBuyContexto.Set<TEntity>().Add(entity);
             QuickBuyContexto.SaveChanges();
+            
         }
 
         public void Remover(TEntity entity)
         {
             QuickBuyContexto.Remove(entity);
             QuickBuyContexto.SaveChanges();
+            
         }
 
         public void Dispose()
